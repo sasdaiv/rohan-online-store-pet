@@ -3,7 +3,7 @@
 .footer {
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #494949;
 
@@ -32,6 +32,7 @@
   &__social {
     display: flex;
     gap: 30px;
+    justify-content: flex-end;
 
     &--icon {
       filter: brightness(0) invert(1);
@@ -47,4 +48,9 @@
       }
     }
   }
+}
+
+.footer__title,
+.footer__social {
+  flex: 1;
 }
