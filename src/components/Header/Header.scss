@@ -1,0 +1,92 @@
+@import '../../utils/mixins.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html,
+body {
+  height: 100%;
+
+}
+
+.header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #494949;
+  margin-bottom: 20px;
+
+  @include onMobile {
+    padding: 5px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    align-items: center;
+
+    &--logo {
+      height: 50px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  transition: 0.3s;
+
+}
+
+
+.nav__link--cart {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.cart__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+
+  @include onMobile {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.cart__quantity {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff6600;
+  color: #fff;
+  font-size: 12px;
+  height: 80%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  @include onMobile {
+    top: -4px;
+    right: -4px;
+  }
+}

@@ -1,0 +1,96 @@
+.section {
+  &__header {
+    &--title {
+      font-size: 36px;
+    }
+  }
+
+  &__welcome {
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  margin-bottom: 20px;
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--details-button {
+      padding: 8px 16px;
+      background-color: #684141;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+
+      &:hover {
+        background-color: #494949;
+      }
+    }
+  }
+}
+
+.section__slider {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease; /* Add transition property for smooth sliding */
+}
+
+.slider__image {
+  border-radius: 20px;
+  width: 100%;
+  height: 500px; /* Set the desired height for your slider */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add transition properties for smooth image fade-in/out */
+}
+
+.slider__image.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider__btn {
+  position: absolute;
+  padding: 6px 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: 1px solid #7e7e7e;
+  font-size: 24px;
+  color: #7e7e7e;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(160, 160, 160, 0.3);
+  }
+}
+.slider__prev-btn {
+  left: 20px;
+}
+
+.slider__next-btn {
+  right: 20px;
+}

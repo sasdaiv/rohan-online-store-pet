@@ -1,0 +1,50 @@
+@import '../../utils/mixins.scss';
+
+.footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #494949;
+
+  @include onMobile {
+    padding: 5px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+  &__title {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    align-items: center;
+
+    &--logo {
+      height: 50px;
+    }
+  }
+
+  &__rights {
+    color: #fff;
+  }
+
+  &__social {
+    display: flex;
+    gap: 30px;
+
+    &--icon {
+      filter: brightness(0) invert(1);
+    }
+
+    &--link {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:hover {
+        color: #ad8e8e;
+      }
+    }
+  }
+}
