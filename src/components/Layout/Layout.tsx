@@ -1,18 +1,18 @@
 import React from "react";
-import { Header } from "../Header/Header";
+import { Header } from "../Header/Header"; 
 import { Routes, Route } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
 import { HomePage } from "../../pages/HomePage";
 import ProductListingPage from "../../pages/ProductListingPage";
-import CartPage from "../../pages/CartPage";
 import ProductDetailPage from "../../pages/ProductDetailsPage";
 import { useEffect } from "react";
 import { actions as productsActions } from "../../store/productsSlice";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import './Layout.scss'
+import { Cart } from "../Cart/Cart";
 
 export const Layout = () => {
-
+  const { isCartVisible } = useAppSelector(state => state.cart);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -23,8 +23,9 @@ export const Layout = () => {
 
 
   return (
-    <>
+    <div className={`main-wrapper ${isCartVisible ? 'pointer-none' : ''}`}>
       <Header />
+      {isCartVisible && <Cart />}
       <main className="main">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -32,11 +33,10 @@ export const Layout = () => {
             <Route index element={<ProductListingPage />} />
             <Route path=":productId" element={<ProductDetailPage />} />
           </Route>
-          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<h1>Page not found...</h1>} />
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

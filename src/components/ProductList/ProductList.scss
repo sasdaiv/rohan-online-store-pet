@@ -61,17 +61,22 @@
   }
 
   &--category {
-    font-size: 1rem;
+    font-size: 12px;
     color: #666;
     margin-bottom: 16px;
+  }
+
+  &--price {
+    font-size: 12px;
   }
 
 
 
   &--add-button {
-    padding: 8px 16px;
+    padding: 2px 4px;
     background-color: #684141;
     color: #fff;
+    height: 36px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -80,6 +85,10 @@
     &:hover {
       background-color: #494949;
     }
+  }
+
+  &--in-cart-button {
+    background-color: #3d2626;
   }
 
   &--details-button {

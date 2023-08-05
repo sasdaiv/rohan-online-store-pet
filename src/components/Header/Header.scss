@@ -9,16 +9,15 @@
 html,
 body {
   height: 100%;
-
 }
 
 .header {
+  position: relative;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #494949;
-  margin-bottom: 20px;
 
   @include onMobile {
     padding: 5px;
@@ -41,23 +40,25 @@ body {
 .nav {
   display: flex;
   gap: 30px;
-}
 
-.nav__link {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  display: flex;
-  transition: 0.3s;
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    transition: 0.3s;
 
-}
+  }
 
 
-.nav__link--cart {
-  display: flex;
-  align-items: center;
-  position: relative;
-  text-decoration: none;
+  &__link--cart {
+    pointer-events: all;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+  }
 }
 
 .cart__icon {

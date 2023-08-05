@@ -8,10 +8,12 @@ interface CartItem {
 
 interface CartState {
   items: CartItem[];
+  isCartVisible: boolean;
 }
 
 const initialState: CartState = {
-  items: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
+  items: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : [],
+  isCartVisible: false,
 }
 const cartSlice = createSlice({
   name: 'cart',
@@ -49,6 +51,9 @@ const cartSlice = createSlice({
         existingItem.quantity--;
         localStorage.setItem('cart', JSON.stringify(state.items));
       }
+    },
+    toggleCartVisibility: (state) => {
+      state.isCartVisible = !state.isCartVisible;
     },
   },
 });
