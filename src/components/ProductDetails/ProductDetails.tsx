@@ -30,14 +30,14 @@ export const ProductDetails: React.FC = () => {
       <div className="product-details__image-gallery">
         {selectedProduct.images.map((image, index) => (
           <img key={index} className="product-details__image" src={image} alt={`Product ${index + 1}`} />
-        ))}
+        )).slice(0,3)}
       </div>
       <div className="product-details__content">
         <h2 className="product-details__title">{selectedProduct.title}</h2>
         <div className="product-details__info">
           <div className="product-details__info--left">
             <p className="product-details__price">Price: {selectedProduct.price} $</p>
-            <p className="product-details__category">Category: {selectedProduct.category.name}</p>
+            <p className="product-details__category">Category: {selectedProduct.category}</p>
           </div>
           <div className="product-details__info--right">
             <p className="product-details__description"><span style={{ fontWeight: 700 }}>Description:</span> {selectedProduct.description}</p>

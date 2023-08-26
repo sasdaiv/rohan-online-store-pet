@@ -17,10 +17,10 @@ export const ProductList = () => {
     <>
       <h1 id="products" className="products__title">Products</h1>
       <div className="product__list">
-        {products.slice(0, 8).map((product) => {
+        {products.slice(0, 30).map((product) => {
           return (
             <div key={product.id} className="product__item">
-              <h3 className="product__item__title">{product.title}</h3>
+              <h3 className="product__item__title">{product.title.length < 20 ? product.title : product.title.slice(0, 20) + '...'}</h3>
               <div className="product__item--wrapper">
                 <img
                   src={product.images[0]}
@@ -28,7 +28,7 @@ export const ProductList = () => {
                   alt="product"
                 />
                 <div className="product__item--info">
-                  <p className="product__item--category">{product.category.name}</p>
+                  <p className="product__item--category">{product.category}</p>
                   <p className="product__item--price">{product.price}$</p>
                 </div>
                 <button

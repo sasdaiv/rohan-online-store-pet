@@ -62,7 +62,7 @@ export const Main = () => {
                     className="product__item--image"
                     alt="product"
                   />
-                  <p className="product__item--category">{product.category.name}</p>
+                  <p className="product__item--category">{product.category}</p>
                   <button
                   className={`product__item--add-button ${handleInCart(product) ? 'product__item--in-cart-button' : ''}`}
                   onClick={() => dispatch(cartActions.add({ product, quantity: 1 }))}

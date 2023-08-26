@@ -16,9 +16,9 @@ export const Layout = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
+    fetch("https://dummyjson.com/products")
       .then(res => res.json())
-      .then(json => dispatch(productsActions.set(json)))
+      .then(json => dispatch(productsActions.set(json.products)))
   })
 
 
